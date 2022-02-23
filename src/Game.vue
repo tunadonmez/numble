@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { onUnmounted } from 'vue'
-import { getWordOfTheDay, allWords, getNumberOfTheDay } from './words'
+import { getNumberOfTheDay } from './words'
 import Keyboard from './Keyboard.vue'
 import { LetterState } from './types'
 
 // Get word of the day
-//const answer = getWordOfTheDay()
 const answer = getNumberOfTheDay().toString()
 
 // Board state. Each tile is represented as { letter, state }
@@ -74,13 +73,6 @@ function clearTile() {
 function completeRow() {
   if (currentRow.every((tile) => tile.letter)) {
     const guess = currentRow.map((tile) => tile.letter).join('')
-    //if (!allWords.includes(guess) && guess !== answer) 
-    /* if (guess !== answer){
-      shake()
-      showMessage(`Not in word list`)
-      return
-    } */
-
     const answerLetters: (string | null)[] = answer.split('')
     // first pass: mark correct ones
     currentRow.forEach((tile, i) => {
@@ -181,7 +173,7 @@ function genResultGrid() {
     </div>
   </Transition>
   <header>
-    <h1>NUMBLR</h1>
+    <h1>NUMBLE</h1>
   </header>
   <div id="board">
     <div

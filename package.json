@@ -1,5 +1,5 @@
 {
-  "name": "vue-wordle",
+  "name": "vue-numble",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
